@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b1a">
+  <meta name="description" content="The Last Seed — a small interactive ecosystem experiment.">
+  <title>The Last Seed — An Ecosystem Experiment</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="The Last Seed home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>FIELD NOTES <span class="brand-divider">/</span> 01</span>
+      </a>
+      <div class="topbar-right">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="world-status">ECOSYSTEM: DORMANT</span>
+      </div>
+    </header>
+
+    <section class="intro" id="top" aria-labelledby="main-title">
+      <p class="eyebrow">A SMALL EXPERIMENT IN CARE & CONSEQUENCE</p>
+      <h1 id="main-title">THE LAST <em>SEED</em></h1>
+      <p class="intro-copy">The world has gone quiet. One seed remains. Your choices will decide what can grow from it.</p>
+    </section>
+
+    <section class="experience-grid" aria-label="Interactive ecosystem">
+      <section class="world-panel panel" aria-label="The seed's environment">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">THE GREENHOUSE // SECTOR 01</p>
+            <h2 id="stage-name">Dormant seed</h2>
+          </div>
+          <div class="cycle-counter"><span id="cycle-number">01</span><small> CYCLE</small></div>
+        </div>
+
+        <div class="landscape" id="landscape" data-stage="seed" data-mood="calm">
+          <div class="starfield" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="moon" aria-hidden="true"></div>
+          <div class="horizon-glow" aria-hidden="true"></div>
+          <div class="plant-wrap" aria-hidden="true">
+            <svg class="plant-art" viewBox="0 0 240 250" role="img" aria-label="An illustration of the growing last seed">
+              <ellipse class="seed-shadow" cx="120" cy="219" rx="28" ry="7" />
+              <path class="root root-left" d="M120 215 C104 226 107 234 93 239" />
+              <path class="root root-right" d="M120 215 C137 226 132 235 148 240" />
+              <path class="stem" d="M120 215 C119 190 121 167 119 143 C118 120 124 99 120 76" />
+              <path class="branch branch-left" d="M119 157 C100 145 91 135 83 121" />
+              <path class="branch branch-right" d="M120 132 C139 122 146 111 155 96" />
+              <path class="leaf leaf-left" d="M84 122 C63 119 58 101 63 91 C81 91 94 103 84 122Z" />
+              <path class="leaf leaf-right" d="M155 97 C174 93 183 77 176 66 C159 69 148 82 155 97Z" />
+              <path class="leaf leaf-top" d="M120 81 C103 65 108 47 120 39 C135 53 137 69 120 81Z" />
+              <circle class="flower-center" cx="120" cy="39" r="8" />
+              <g class="petals">
+                <ellipse cx="120" cy="22" rx="6" ry="12"/><ellipse cx="137" cy="39" rx="12" ry="6"/>
+                <ellipse cx="120" cy="56" rx="6" ry="12"/><ellipse cx="103" cy="39" rx="12" ry="6"/>
+                <ellipse cx="132" cy="27" rx="6" ry="11" transform="rotate(45 132 27)"/>
+                <ellipse cx="108" cy="51" rx="6" ry="11" transform="rotate(45 108 51)"/>
+              </g>
+            </svg>
+            <div class="seed-core"></div>
+          </div>
+          <div class="ground ground-back" aria-hidden="true"></div>
+          <div class="ground ground-front" aria-hidden="true"></div>
+          <div class="landscape-caption"><span>ATMOSPHERE</span><strong id="atmosphere-label">STILL / WAITING</strong></div>
+        </div>
+
+        <div class="growth-row">
+          <div class="growth-label"><span>GROWTH</span><strong id="growth-value">0%</strong></div>
+          <div class="progress-track" role="progressbar" aria-label="Plant growth" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="growth-progress"><span id="growth-fill"></span></div>
+          <p id="growth-description" class="microcopy">A dormant seed rests beneath the soil.</p>
+        </div>
+      </section>
+
+      <aside class="side-column">
+        <section class="resources panel" aria-labelledby="resources-title">
+          <div class="panel-heading compact-heading">
+            <div><p class="eyebrow">LIVE CONDITIONS</p><h2 id="resources-title">Environment</h2></div>
+            <span class="live-tag">LIVE <i></i></span>
+          </div>
+          <div class="resource-list">
+            <div class="resource-item">
+              <div class="resource-top"><span><b class="resource-icon water-icon">≈</b> Moisture</span><strong id="moisture-value">48%</strong></div>
+              <div class="meter"><span id="moisture-bar" class="water-meter" style="width:48%"></span></div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-top"><span><b class="resource-icon light-icon">☼</b> Light</span><strong id="light-value">42%</strong></div>
+              <div class="meter"><span id="light-bar" class="light-meter" style="width:42%"></span></div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-top"><span><b class="resource-icon soil-icon">⌁</b> Soil health</span><strong id="soil-value">38%</strong></div>
+              <div class="meter"><span id="soil-bar" class="soil-meter" style="width:38%"></span></div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-top"><span><b class="resource-icon stress-icon">!</b> Stress</span><strong id="stress-value">8%</strong></div>
+              <div class="meter"><span id="stress-bar" class="stress-meter" style="width:8%"></span></div>
+            </div>
+          </div>
+          <div class="inventory">
+            <div><span>WATER STORED</span><strong><b id="water-value">5</b><small> UNITS</small></strong></div>
+            <div><span>SOLAR CELLS</span><strong><b id="solar-value">5</b><small> UNITS</small></strong></div>
+          </div>
+        </section>
+
+        <section class="actions panel" aria-labelledby="actions-title">
+          <div class="panel-heading compact-heading">
+            <div><p class="eyebrow">YOUR TURN</p><h2 id="actions-title">Choose an action</h2></div>
+          </div>
+          <p class="action-hint">Each action changes the ecosystem. Some actions become possible only when conditions change.</p>
+          <div class="action-list" id="action-list">
+            <button class="action-button" data-action="water"><span class="action-symbol">＋</span><span class="action-text"><strong>Water the seed</strong><small>Use 1 water unit · increase moisture</small></span><span class="action-arrow">↗</span></button>
+            <button class="action-button" data-action="light"><span class="action-symbol">☼</span><span class="action-text"><strong>Redirect light</strong><small>Use 1 solar cell · increase light</small></span><span class="action-arrow">↗</span></button>
+            <button class="action-button" data-action="soil"><span class="action-symbol">⌁</span><span class="action-text"><strong>Nourish the soil</strong><small>Unlocks after the seed sprouts</small></span><span class="action-arrow">↗</span></button>
+            <button class="action-button" data-action="shelter"><span class="action-symbol">◇</span><span class="action-text"><strong>Build a shelter</strong><small>Available when stress is high</small></span><span class="action-arrow">↗</span></button>
+            <button class="action-button action-button--quiet" data-action="cycle"><span class="action-symbol">◷</span><span class="action-text"><strong>Let a cycle pass</strong><small>Time passes; the plant responds</small></span><span class="action-arrow">↗</span></button>
+            <button class="action-button action-button--final" data-action="bloom"><span class="action-symbol">✳</span><span class="action-text"><strong>Release the bloom</strong><small>Unlocks when the ecosystem is ready</small></span><span class="action-arrow">↗</span></button>
+          </div>
+          <p class="action-feedback" id="action-feedback" role="status" aria-live="polite">The seed is waiting. What will you do first?</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="lower-grid">
+      <section class="log-panel panel" aria-labelledby="log-title">
+        <div class="panel-heading compact-heading"><div><p class="eyebrow">MEMORY OF THE SYSTEM</p><h2 id="log-title">Recent events</h2></div><span class="event-count" id="event-count">01 / 06</span></div>
+        <ol class="event-log" id="event-log" aria-live="polite"><li><span class="event-index">01</span><span>The greenhouse is quiet. A seed waits beneath the soil.</span></li></ol>
+      </section>
+      <section class="principles-panel panel" aria-labelledby="principles-title">
+        <p class="eyebrow">DESIGN LOGIC</p><h2 id="principles-title">A system that responds.</h2>
+        <div class="principle-note"><span class="principle-number">01</span><p><strong>Agency</strong><br>Your decisions alter the seed's conditions and growth.</p></div>
+        <div class="principle-note"><span class="principle-number">02</span><p><strong>Possibility</strong><br>The current ecosystem determines which actions are available.</p></div>
+      </section>
+    </section>
+
+    <footer class="footer"><span>THE LAST SEED / INTERACTIVE MEDIA EXPERIMENT</span><button id="reset-button" class="reset-button" type="button">↺ Restart experiment</button><span>DESIGNED TO GROW</span></footer>
+  </main>
+
+  <dialog id="ending-dialog" class="ending-dialog" aria-labelledby="ending-title">
+    <div class="ending-content"><p class="eyebrow" id="ending-kicker">FIELD REPORT // COMPLETE</p><h2 id="ending-title">A new beginning.</h2><p id="ending-message">The seed has changed the world around it.</p><button id="ending-reset" class="primary-button" type="button">Try another approach</button></div>
+  </dialog>
+</body>
+</html>
